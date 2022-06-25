@@ -1,5 +1,5 @@
-https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/download/ensemble_model/0fold_best_model.pth
-https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/download/ensemble_model/1fold_best_model.pth
-https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/download/ensemble_model/2fold_best_model.pth
-https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/download/ensemble_model/3fold_best_model.pth
-https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/download/ensemble_model/4fold_best_model.pth
+https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/ensemble_model/0fold_best_model.pth
+https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/ensemble_model/1fold_best_model.pth
+https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/ensemble_model/2fold_best_model.pth
+https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/ensemble_model/3fold_best_model.pth
+https://github.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/releases/ensemble_model/4fold_best_model.pth
