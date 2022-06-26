@@ -1,24 +1,24 @@
-# 작물 병해 분류 AI competition -1st-place-solution
-This repository is the 1st place solution for [DACON 작물 병해 분류 AI 경진대회](https://dacon.io/competitions/official/235842/overview/description).
+# Crop disease classification AI competition -1st-place-solution
+This repository is the 1st place solution for [DACON 작물 병해 분류 AI 경진대회](https://dacon.io/competitions/official/235842/overview/description). This competition is a task to classify the disease through the images of the crop affected by the disease.
 
 ***
 ## Overview
+- Data Augmentation
 - RegNet040 5Fold ensemble
 - Pseudo labeling
-- 이전 대회에서 활용한 Framework을 기반으로 진행했습니다.
 
-## Total Process
-- Train Dastset이 많지 않기 때문에 Test Dataset에 대해 Pseudo labeling을 진행 후, Train Dataset에 추가하여 모델을 Training시켰습니다.
-- 총 6번의 Pseudo labeling을 진행 하였습니다.
-- 첫 Pseudo labeling은 최적화 과정을 거친 regnet 5fold ensemble(Public Score : 0.989)을 이용했습니다.
-- 이후 동일한 Model config에서 총 5번의 Pseudo label set update를 진행하였습니다.
-- 최종적으로 총 5번의 update가 된 Pseudo label set + Train Dataset에 대해 Training한 regnet 5fold ensemble을 제출 하였고 Private Score기준 1등을 달성했습니다.
+## Pseudo labeling Process
+- The training dataset are a small amount of 250 images. So I conducted Pseudo labeling for the relatively large amount Test dataset(4750 images).
+- Pseudo labeling was performed 6 times in total process.
+- The first Pseudo labeling used the optimized regnet 5fold ensemble(Public Score: 0.989).
+- After that, I did a total of 5 Pseudo label set updates in the same model config.
+- Finally, I submitted a regnet 5 fold ensemble that was trained for Pseudo label set + Train Dataset, which was updated 5 times in total, and achieved 1st place based on Private Score.
 
 ## Pseudo label set sampling
-- Pseudo label set의 신뢰성을 위해, 5fold ensembel logic에 대한 softmax결과값이 0.9보다 큰 sample로 한정했습니다.
-- Pseudo label set에서 비율이 많은 0번 class는 random sampling(n=500)했습니다.
+- For the reliability of the pseudo label set, the softmax value for the 5fold ensemble model was limited to samples greater than 0.9.
+- Class 0 with high proportions in the pseudo label set was random sampling(n=500).
 
-## Pseudo label set업데이트에 따른 Regnet 5fold ensemble Public Score
+## Public Score by Pseudo label set update count
 - 0step(Only Trainset) : 0.989
 - 1step : 0.996
 - 4step : 0.998
@@ -85,9 +85,12 @@ python main.py --batch_size=16 --drop_path_rate=0.2 --encoder_name=regnety_040\
 ```
 
 ## Make a prediction without Training
-- Inference using saved weights
+- Inference using pretrained weights
 - Data Preparation must proceed first.
 ```python
+# Pretrained weight download from github
+os.makedirs('./results/', exist_ok=True)
+!wget -i https://raw.githubusercontent.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/main/load_pretrained.txt -P results
 python test.py
 ```
 
