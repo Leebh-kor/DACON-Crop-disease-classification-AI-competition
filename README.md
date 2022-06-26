@@ -1,6 +1,6 @@
 # Crop disease classification AI competition -1st-place-solution
 This repository is the 1st place solution for [DACON 작물 병해 분류 AI 경진대회](https://dacon.io/competitions/official/235842/overview/description). This competition is a task to classify the disease through the images of the crop affected by the disease.
-
+DACON: Crop disease classification AI competition. 1st place solution
 ***
 ## Overview
 - Data Augmentation
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 
 <br>
 
-## Data Preparation
+## Data Preprocessing
 - Since the original image size is large, we saved it after resize for learning time
 ```python
 python make_data.py
@@ -83,15 +83,3 @@ python main.py --batch_size=16 --drop_path_rate=0.2 --encoder_name=regnety_040\
                --weight_decay=1e-3 --initial_lr=5e-6\
                --max_lr=1e-3 --epochs=70 --warm_epoch=5 --image_type=train_1024
 ```
-
-## Make a prediction without Training
-- Inference using pretrained weights
-- Data Preparation must proceed first.
-```python
-# Pretrained weight download from github
-os.makedirs('./results/', exist_ok=True)
-!wget -i https://raw.githubusercontent.com/Leebh-kor/DACON-Crop-disease-classification-AI-competition/main/load_pretrained.txt -P results
-python test.py
-```
-
-
