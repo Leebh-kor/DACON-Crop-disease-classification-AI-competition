@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 <br>
 
-## Directory Structure
+## Data Structure
 - data
     - train.csv
     - test.csv
@@ -58,12 +58,6 @@ pip install -r requirements.txt
         - 20000.jpg
         - ...
         - 24749.jpg
-- src
-    - config.py
-    - dataloader.py
-    - ...
-    - ...
-    - main.py
 
 <br>
 
