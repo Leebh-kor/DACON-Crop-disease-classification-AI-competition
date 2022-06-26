@@ -60,7 +60,7 @@ if __name__ == '__main__':
         make_pseudo_df(df_train, df_test, ensemble, step+1)
 
     # For submission
-    # sub.iloc[:, 1] = ensemble.argmax(axis=1)
-    # sub.to_csv(f'./submission.csv', index=False)
+    sub.iloc[:, 1] = ensemble.argmax(axis=1)
+    sub.to_csv(f'./submission.csv', index=False)
 
 
